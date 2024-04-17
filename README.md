@@ -1,6 +1,6 @@
 This Deep Learning project was developed with main goal to create a Neural Network that could potentially return the spatial transformation of an image with respect to another (Moving-Fixed image). This procedure, also known as 
 image registration, is a way to spatially match two images in classic computer vision, using classic, widely used algorithms. The purpose of this project was to provide similar or better results to the ones of computer vision,
-but produced way faster.
+but produced way faster.\n
 The main dataset used for the project was FIRE (Fundus Image Registration dataset, link: https://projects.ics.forth.gr/cvrl/fire/), which contains high definition image pairs of retinas. 
 Together with the images, the dataset provided also hand picked feature points, which were annotated as (x,y) coordinates in txt files for each pair. There were 20 feature points for each image pair, 10 for each image (10 for moving, 10 for fixed).
 The pairs were used to generate multiple patch samples which were later used for the training process of the Neural Network.
