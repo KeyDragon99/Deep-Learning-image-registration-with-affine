@@ -1,6 +1,4 @@
-This Deep Learning project was developed with main goal to create a Neural Network that could potentially return the spatial transformation of an image with respect to another (Moving-Fixed image). This procedure, also known as 
-image registration, is a way to spatially match two images in classic computer vision, using classic, widely used algorithms. The purpose of this project was to provide similar or better results to the ones of computer vision,
-but produced way faster.
+This Deep Learning project was developed with main goal to create a Neural Network that could potentially return the spatial transformation of an image with respect to another (Moving-Fixed image). This procedure, also known as image registration, is a way to spatially match two images in classic computer vision, using classic, widely used algorithms. The purpose of this project was to provide similar or better results to the ones of computer vision, but produced in shorter period of time.
 
 The main dataset used for the project was FIRE (Fundus Image Registration dataset, link: https://projects.ics.forth.gr/cvrl/fire/), which contains high definition image pairs of retinas. 
 
@@ -9,6 +7,8 @@ Together with the images, the dataset provided also hand picked feature points, 
 The pairs were used to generate multiple patch samples which were later used for the training process of the Neural Network.
 
 The Neural Network's (NN) architecture was predefined and passed together with the data that would be used on it for the training.
+
+The NN was inspired by the first half of the Spatial Transformer Networks (STNs) which included a decoder in the form of convolutional layers and an encoder in the form of fully connected layers. Since the transformation would be applied in the form of the affine transformation matrix, I implemented a parallel formation for the fully connected layers, each containing one of the basic transformation elements of the affine matrix (translation, rotation and scaling). 
 
 There are 4 python files, each one containing a different part of the code.
 
