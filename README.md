@@ -11,14 +11,12 @@ The Neural Network's (NN) architecture was predefined and passed together with t
 The NN was inspired by the first half of the Spatial Transformer Networks (STNs) which included a decoder in the form of convolutional layers and an encoder in the form of fully connected layers. Since the transformation would be applied in the form of the affine transformation matrix, I implemented a parallel formation for the fully connected layers, each containing one of the basic transformation elements of the affine matrix (translation, rotation and scaling). 
 ![3layer_model_2fc](https://github.com/KeyDragon99/Deep-Learning-image-registration-with-affine/assets/142112884/b5a078a2-ed1e-4aea-bff8-a0cd19126b2e)
 
-For the training process, the pre-calculated affine matrices were used as ground truth and the image pairs were used as the NN's input.
-
 There are 4 python files, each one containing a different part of the code.
 
 The Network file contains the architecture of the Neural Network.
 
 The DatasetCreator takes as input image files and returns randomly sampled patches (with smaller size) with in each image and saves them in npy form.
 
-The NetworkTrainer file contains the code that takes as input the data and with that, it trains the NN, whose structure is passed through the Network file.
+The NetworkTrainer file takes as input the pre-sampled patch pairs and their affine matrices as the ground truth and uses them to train the NN, whose structure is passed through the Network file.
 
-The testing file contains code to receive pre-trained NN and test data and uses the test data on the NN to test its accuracy. It also displays the results by applying the network's predictions on the test samples.
+The testing file contains code to receive pre-trained NN and passes the test data to the NN to test its accuracy. It also displays the results by applying the network's predictions on the test samples.
