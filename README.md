@@ -2,13 +2,14 @@ This Deep Learning project was developed with main goal to create a Neural Netwo
 
 The main dataset used for the project was FIRE (Fundus Image Registration dataset, link: https://projects.ics.forth.gr/cvrl/fire/), which contains high definition image pairs of retinas. 
 
-Together with the images, the dataset provided also hand picked feature points, which were annotated as (x,y) coordinates in txt files for each pair. There were 20 feature points for each image pair, 10 for each image (10 for moving, 10 for fixed).
+Together with the images, the dataset provided also hand picked feature points, which were annotated as (x,y) coordinates in txt files for each pair. There were 20 feature points for each image pair, 10 for each image (10 for moving, 10 for fixed). These pairs were used to generate the affine matrices that when applied to the moving image, it would spatially match the fixed one.
 
 The pairs were used to generate multiple patch samples which were later used for the training process of the Neural Network.
 
 The Neural Network's (NN) architecture was predefined and passed together with the data that would be used on it for the training.
 
 The NN was inspired by the first half of the Spatial Transformer Networks (STNs) which included a decoder in the form of convolutional layers and an encoder in the form of fully connected layers. Since the transformation would be applied in the form of the affine transformation matrix, I implemented a parallel formation for the fully connected layers, each containing one of the basic transformation elements of the affine matrix (translation, rotation and scaling). 
+![3layer_model_2fc ](https://github.com/KeyDragon99/Deep-Learning-image-registration-with-affine/assets/142112884/f5dcd3d2-740a-40ba-99f0-e309e297aff3)
 
 There are 4 python files, each one containing a different part of the code.
 
