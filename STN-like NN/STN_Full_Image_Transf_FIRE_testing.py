@@ -142,7 +142,7 @@ def tester(model, testimageloader, testpatchloader, testtargetloader, testpoints
         targets = targets.view(-1, 6)
         targets = targets.to(Device)
 
-        with ((((((torch.set_grad_enabled(False))))))):
+        with torch.set_grad_enabled(False):
             output1, output2, output3 = model(patches)  # Test network
 
             transl_targets = torch.cat((targets.select(1, 2), targets.select(1, 5)), dim=0)
